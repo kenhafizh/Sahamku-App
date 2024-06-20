@@ -6,10 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.kenapps.sahamkuapp.companiesData.Companies
-import com.kenapps.sahamkuapp.companiesData.Results
 import com.kenapps.sahamkuapp.databinding.FragmentNewsBinding
 import com.kenapps.sahamkuapp.newsData.NewsData
 import retrofit2.Call
@@ -44,15 +41,15 @@ class NewsFragment : Fragment() {
 
         apiService = ApiService().getService()
 
-        getCompaniesData()
+        getNewsData()
     }
 
-    fun getCompaniesData(){
+    fun getNewsData(){
         apiService.getNews().enqueue(object : Callback<NewsData> {
             override fun onResponse(p0: Call<NewsData>, data: Response<NewsData>) {
                 Log.d("News Fragment", "onResponse : ${data.body()}")
                 if (data.body() != null){
-                    adapter.items = data.body()!!.data
+                    adapter.items = data.body()!!.data.results
                     adapter.notifyDataSetChanged()
                 }
             }

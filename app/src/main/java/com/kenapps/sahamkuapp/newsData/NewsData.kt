@@ -5,8 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class NewsData(
     @SerializedName("data")
-//    val data: List<Data?>?,
-    var data: List<Results> = listOf(),
+    var data: ResultWrapper,
     @SerializedName("message")
     var message: String?,
     @SerializedName("status")

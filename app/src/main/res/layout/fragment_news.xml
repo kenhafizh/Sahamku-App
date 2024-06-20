@@ -5,10 +5,26 @@
     android:layout_height="match_parent"
     tools:context=".NewsFragment">
 
+
+    <TextView
+        android:layout_margin="16dp"
+        android:id="@+id/todayNews"
+        android:fontFamily="@font/nunito_regular"
+        android:textStyle="bold"
+        android:text="Today News"
+        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recylerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:padding="10dp">
+
     </androidx.recyclerview.widget.RecyclerView>
 
 </FrameLayout>
